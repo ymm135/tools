@@ -35,8 +35,10 @@ func main() {
 
 		// 然后通过空格分组，去除最后一个
 		contents := strings.Split(line, " ")
-		contents = contents[0 : len(contents)-1]
-		line = strings.Join(contents, " ")
+		if len(contents) > 2 {
+			contents = contents[0 : len(contents)-1]
+			line = strings.Join(contents, " ")
+		}
 		results.PushBack(line)
 	}
 
